@@ -1,34 +1,43 @@
-public class Border extends javax.swing.JFrame {
 
-    public Border() {
+public class OrderSystem extends javax.swing.JFrame {
+public Struk struk = new Struk();
+
+    public OrderSystem () {
         initComponents();
-        this.setLocationRelativeTo(null);
+        this.setLocationRelativeTo(null); // digunakan untuk tampilan berada di tengah layar
     }
+    
 
-   
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        onmipacafe = new javax.swing.JLabel();
-        pesandisini = new javax.swing.JButton();
+        dinein = new javax.swing.JButton();
+        takeaway = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ONMIPA CAFE");
 
-        jPanel1.setBackground(new java.awt.Color(204, 51, 0));
+        jPanel1.setBackground(new java.awt.Color(255, 204, 0));
 
-        onmipacafe.setFont(new java.awt.Font("Vogue", 1, 36)); // NOI18N
-        onmipacafe.setForeground(new java.awt.Color(255, 255, 255));
-        onmipacafe.setText("ONMIPA CAFE");
-
-        pesandisini.setBackground(new java.awt.Color(255, 204, 0));
-        pesandisini.setFont(new java.awt.Font("Sitka Text", 1, 18)); // NOI18N
-        pesandisini.setText("Pesan Disini");
-        pesandisini.addActionListener(new java.awt.event.ActionListener() {
+        dinein.setBackground(new java.awt.Color(204, 51, 0));
+        dinein.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        dinein.setForeground(new java.awt.Color(255, 255, 255));
+        dinein.setText("Dine In");
+        dinein.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pesandisiniActionPerformed(evt);
+                dineinActionPerformed(evt);
+            }
+        });
+
+        takeaway.setBackground(new java.awt.Color(204, 51, 0));
+        takeaway.setFont(new java.awt.Font("Rockwell", 1, 24)); // NOI18N
+        takeaway.setForeground(new java.awt.Color(255, 255, 255));
+        takeaway.setText("Take Away");
+        takeaway.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                takeawayActionPerformed(evt);
             }
         });
 
@@ -37,23 +46,20 @@ public class Border extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(89, 89, 89)
-                        .addComponent(onmipacafe))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(pesandisini)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(takeaway, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+                    .addComponent(dinein, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(135, 135, 135)
-                .addComponent(onmipacafe, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pesandisini, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addGap(176, 176, 176)
+                .addComponent(dinein)
+                .addGap(76, 76, 76)
+                .addComponent(takeaway)
+                .addContainerGap(176, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -64,20 +70,28 @@ public class Border extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pesandisiniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pesandisiniActionPerformed
-        //System.exit(0);
-        OrderSystem A = new OrderSystem();
+    private void dineinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dineinActionPerformed
+
+        PaymentMethod A = new PaymentMethod("Dine in"); //untuk bikin objek JFrame setelah di next
+        A.setVisible(true); // memunculkan JFrame baru
+        this.setVisible(false); // menghapus JFrame sebelumnya
+    }//GEN-LAST:event_dineinActionPerformed
+
+    private void takeawayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_takeawayActionPerformed
+        PaymentMethod A = new PaymentMethod("Take Away");
         A.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_pesandisiniActionPerformed
+    }//GEN-LAST:event_takeawayActionPerformed
 
-    
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -105,14 +119,14 @@ public class Border extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Border().setVisible(true);
+                new OrderSystem().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton dinein;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JLabel onmipacafe;
-    private javax.swing.JButton pesandisini;
+    private javax.swing.JButton takeaway;
     // End of variables declaration//GEN-END:variables
 }

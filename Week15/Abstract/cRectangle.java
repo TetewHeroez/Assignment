@@ -1,4 +1,4 @@
-package Aplro2.Week15;
+package Aplro2.Week15.Abstract;
 
 public class cRectangle extends cBentuk2D{
     private double panjang;

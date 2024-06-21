@@ -1,4 +1,4 @@
-package Aplro2.Week15;
+package Aplro2.Week15.Abstract;
 
 public abstract class cBentuk2D {
     private String warna;

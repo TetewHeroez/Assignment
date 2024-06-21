@@ -1,4 +1,4 @@
-package Aplro2.Week15;
+package Aplro2.Week15.Abstract;
 
 public class Main {
     public static void main(String[] args) {
